@@ -14,3 +14,9 @@ The process of learning was made 3 times:
 3. With a random position of the Cube and a random position of the Goal
 
 With the last learning environment, the cube learned to succesfully go to the Goal. Even if during runtime we move the Goal, the Cube will adjust is movement to follow and reach the new position of the Goal 
+
+
+### Escape Rooms
+This agent must learn how to complete some simple escapes room, the agent needs to see where the buttons are, press it and go outside the door as fast as he can.
+
+Still WIP
