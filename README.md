@@ -19,4 +19,17 @@ With the last learning environment, the cube learned to succesfully go to the Go
 ### Escape Rooms
 This agent must learn how to complete some simple escapes room, the agent needs to see where the buttons are, press it and go outside the door as fast as he can.
 
-Still WIP
+#### Escape Room 1
+This escape room is very simple, the Agent must learn to navigate the room and press the pressure plate to open the door, then go through the door and complete the level.
+
+The result are handled this way:
+- -0.01 each frame
+- -0.5 each time he jumps (so he doesn't jump randomly)
+- -0.1 each frame if he's stuck
+- -2 if he's stuck for more than one second
+- -0.4 if he hits a wall
+- +2 each time a pressure plate is pressed
+- -2 each time he falls
+- +10 at level completed
+
+More to come
