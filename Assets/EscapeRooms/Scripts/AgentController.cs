@@ -31,6 +31,7 @@ public class AgentController : MonoBehaviour
     private float height;
 
     private bool isStuck = false;
+    private float timeStuck = 0f;
 
     private Vector3 initialPosition;
     private Quaternion initialRotation;
@@ -56,7 +57,7 @@ public class AgentController : MonoBehaviour
 
     private void Update()
     {
-
+        agent.AddReward(-0.01f);
         Vector3 dir = direction.transform.position - cube.transform.position;
         dir.Normalize();
         //Debug.Log(dir);
@@ -87,6 +88,18 @@ public class AgentController : MonoBehaviour
                 //Debug.Log("Jumping");
                 body.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
                 StartCoroutine(JumpFunc());
+                agent.AddReward(-0.5f);
+            }
+        }
+        else
+        {
+            agent.AddReward(-0.1f);
+            timeStuck += Time.deltaTime;
+            if (timeStuck >= 1.0f)
+            {
+                agent.AddReward(-10f);
+                timeStuck = 0f;
+                agent.EndEpisode();
             }
         }
     }
@@ -95,7 +108,7 @@ public class AgentController : MonoBehaviour
     {
         
         //Debug.DrawRay(transform.position, -cube.transform.up * height/2, Color.white, 2f);
-        if (Physics.Raycast(transform.position, -cube.transform.up, height/2, LayerMask.GetMask("GroundBlock")))
+        if (Physics.Raycast(transform.position, -cube.transform.up, height/2, LayerMask.GetMask("Ground")))
         {
             isGrounded = true;
         }
@@ -104,11 +117,11 @@ public class AgentController : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Physics.Raycast(transform.position, -cube.transform.forward, height / 2, LayerMask.GetMask("GroundBlock")) ||
-            Physics.Raycast(transform.position, cube.transform.forward, height / 2, LayerMask.GetMask("GroundBlock")) ||
-            Physics.Raycast(transform.position, -cube.transform.right, height / 2, LayerMask.GetMask("GroundBlock")) ||
-            Physics.Raycast(transform.position, cube.transform.right, height / 2, LayerMask.GetMask("GroundBlock")) ||
-            Physics.Raycast(transform.position, cube.transform.up, height / 2, LayerMask.GetMask("GroundBlock")))
+        if (Physics.Raycast(transform.position, -cube.transform.forward, height / 2, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, cube.transform.forward, height / 2, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, -cube.transform.right, height / 2, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, cube.transform.right, height / 2, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, cube.transform.up, height / 2, LayerMask.GetMask("Ground")))
         {
             // The player is upside down
             isStuck = true;
@@ -133,14 +146,26 @@ public class AgentController : MonoBehaviour
         if (plate != null)
         {
             plate.ActivatePressurePlate();
+            agent.AddReward(2f);
             return;
         }
 
         FallTrigger fallTrigger = other.GetComponentInParent<FallTrigger>();
         if (fallTrigger != null)
         {
-            Debug.Log("Found fall trigger");
+            //Debug.Log("Found fall trigger");
+            agent.AddReward(-2f);
             agent.Fall();
+            return;
+        }
+
+        EndTrigger endTrigger = other.GetComponent<EndTrigger>();
+        if (endTrigger != null)
+        {
+            //Debug.Log("Found end trigger");
+            agent.AddReward(10f);
+            agent.EndEpisode();
+            return;
         }
     }
 
@@ -149,5 +174,14 @@ public class AgentController : MonoBehaviour
         transform.position = initialPosition;
         transform.rotation = initialRotation;
         isStuck = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            //Debug.Log("Colpito ostacolo");
+            agent.AddReward(-0.4f);
+        }
     }
 }

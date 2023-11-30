@@ -12,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - GroundBlock
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Obstacle
+  - Objective
+  - End
+  - Player
   - 
   - 
   - 

@@ -8,25 +8,30 @@ public class PressurePlate: MonoBehaviour
 
     public RoomController RoomController;
 
-    private float pressedYMovementQuantity = 0.2f;
-    private float movementTime = 1.5f;
+    private float pressedYMovementQuantity = 1.2f;
+    private float movementTime = 0.5f;
 
     private bool activated = false;
 
     private Vector3 startingPosition;
 
+    private bool canRandomize;
+
     private void Start()
     {
+        canRandomize = RoomController.canRandomize;
         startingPosition = transform.position;
     }
 
     public void ResetPressurePlate()
     {
-        if (activated)
-        {
-            StartCoroutine(plateCoroutine(false));
-            activated = false;
+        transform.position = startingPosition;
+        activated = false;
 
+
+        if (canRandomize)
+        {
+            gameObject.transform.position += new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
         }
     }
     public void ActivatePressurePlate()

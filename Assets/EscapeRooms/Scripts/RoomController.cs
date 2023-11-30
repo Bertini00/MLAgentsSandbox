@@ -10,6 +10,8 @@ public class RoomController : MonoBehaviour
 
     public Door Door;
 
+    public bool canRandomize = false;
+
 
 
     // Privates
@@ -43,4 +45,5 @@ public class RoomController : MonoBehaviour
             Door.OpenDoor();
         }
     }
+
 }

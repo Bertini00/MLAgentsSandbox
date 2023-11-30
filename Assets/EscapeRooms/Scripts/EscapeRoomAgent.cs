@@ -12,6 +12,8 @@ public class EscapeRoomAgent : Agent
 
     public RoomController roomController;
 
+    private bool canRandomize = false;
+
     public override void CollectObservations(VectorSensor sensor)
     {
         base.CollectObservations(sensor);
@@ -76,11 +78,17 @@ public class EscapeRoomAgent : Agent
     {
         roomController.ResetRoom();
         controller.ResetAgent();
+        canRandomize = roomController.canRandomize;
+
+        if (canRandomize)
+        {
+            gameObject.transform.position += new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        }
     }
 
     public void Fall()
     {
-        AddReward(-2f);
+        //AddReward(-2f);
         EndEpisode();
     }
 }

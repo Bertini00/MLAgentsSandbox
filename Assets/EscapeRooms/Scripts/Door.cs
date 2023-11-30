@@ -23,10 +23,12 @@ public class Door : MonoBehaviour
     {
         //transform.position = startingPosition;
 
+        StopAllCoroutines();
         if (opened) 
-        { 
-            StartCoroutine(OpenDoorCoroutine(false));
+        {
+            //StartCoroutine(OpenDoorCoroutine(false));
             opened = false;
+            transform.position = startingPosition;
         }
     }
 
@@ -36,7 +38,7 @@ public class Door : MonoBehaviour
         if(!opened)
         {
             opened = true;
-            Debug.Log("Starting coroutine for door");
+            //Debug.Log("Starting coroutine for door");
             StartCoroutine(OpenDoorCoroutine(true));
         }
     }
