@@ -34,15 +34,17 @@ public class PressurePlate: MonoBehaviour
             gameObject.transform.position += new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
         }
     }
-    public void ActivatePressurePlate()
+    public bool ActivatePressurePlate()
     {
         if (!activated)
         {
             //Debug.Log("Attivata pressure plate");
-            RoomController.PressPlate();
             activated = true;
+            RoomController.PressPlate();
             StartCoroutine(plateCoroutine(true));
+            return true;
         }
+        return false;
 
     }
 

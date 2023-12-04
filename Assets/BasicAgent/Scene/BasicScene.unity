@@ -361,16 +361,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3505395660337341618, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914584734682151749, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4409333120708622368, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: cbff0b9d0587e1047918a87f40679c54, type: 3}
+    - target: {fileID: 4409333120708622368, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: m_BehaviorType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606927253963265980, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093685051473800532, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7040143871566444822, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 8301105456801760681, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: cbff0b9d0587e1047918a87f40679c54, type: 3}
+    - target: {fileID: 8301105456801760681, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012696020532287772, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
+      propertyPath: DecisionPeriod
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6397454386378506502, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f972268f9709849b5bb7c766c74ed7, type: 3}

@@ -2,22 +2,31 @@
     "EscapeRoomAgent": {
         "checkpoints": [
             {
-                "steps": 300028,
-                "file_path": "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-300028.onnx",
-                "reward": 8.954000091552734,
-                "creation_time": 1701383388.1634765,
+                "steps": 499990,
+                "file_path": "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-499990.onnx",
+                "reward": 1.277000069618225,
+                "creation_time": 1701641179.6515203,
                 "auxillary_file_paths": [
-                    "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-300028.pt"
+                    "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-499990.pt"
+                ]
+            },
+            {
+                "steps": 827819,
+                "file_path": "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-827819.onnx",
+                "reward": 1.2815001010894775,
+                "creation_time": 1701642479.8978922,
+                "auxillary_file_paths": [
+                    "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-827819.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 300028,
+            "steps": 827819,
             "file_path": "results\\EscapeRoom11\\EscapeRoomAgent.onnx",
-            "reward": 8.954000091552734,
-            "creation_time": 1701383388.1634765,
+            "reward": 1.2815001010894775,
+            "creation_time": 1701642479.8978922,
             "auxillary_file_paths": [
-                "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-300028.pt"
+                "results\\EscapeRoom11\\EscapeRoomAgent\\EscapeRoomAgent-827819.pt"
             ]
         }
     },

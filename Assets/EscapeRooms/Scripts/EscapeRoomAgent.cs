@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using JetBrains.Annotations;
 
 public class EscapeRoomAgent : Agent
 {
@@ -12,7 +13,12 @@ public class EscapeRoomAgent : Agent
 
     public RoomController roomController;
 
+    [CanBeNull]
+    private RewardTracker rewardTracker;
+
     private bool canRandomize = false;
+
+    
 
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -71,14 +77,37 @@ public class EscapeRoomAgent : Agent
         int jump = discActions[2];
 
         controller.SetInputs(move, rotate, jump);
+        AddRew(-0.001f);
 
+
+        if (jump == 1)
+        {
+            AddRew(-0.02f);
+        }
+
+        bool isStuck, isTouchingObstacle;
+        controller.getAgentCondition(out isStuck, out isTouchingObstacle);
+
+        if (isStuck)
+        {
+            AddRew(-0.2f);
+        }
+
+        if (isTouchingObstacle)
+        {
+            AddRew(-0.035f);
+        }
     }
 
     public override void OnEpisodeBegin()
     {
+        
         roomController.ResetRoom();
         controller.ResetAgent();
         canRandomize = roomController.canRandomize;
+
+        rewardTracker.LogReward();
+        rewardTracker.Reset();
 
         if (canRandomize)
         {
@@ -90,5 +119,19 @@ public class EscapeRoomAgent : Agent
     {
         //AddReward(-2f);
         EndEpisode();
+    }
+
+    public void AddRew(float reward)
+    {
+        AddReward(reward);
+        if (rewardTracker)
+        {
+            rewardTracker.AddReward(reward);
+        }
+    }
+
+    private void Start()
+    {
+        TryGetComponent<RewardTracker>(out rewardTracker);
     }
 }

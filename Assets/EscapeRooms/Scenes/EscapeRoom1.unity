@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &49948907
+--- !u!1001 &198497786
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -179,24 +179,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2201908519665936804, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.59
-      objectReference: {fileID: 0}
     - target: {fileID: 2591412244926466965, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
       propertyPath: m_Name
       value: EscapeRoom1Environment
       objectReference: {fileID: 0}
-    - target: {fileID: 3279982855988286924, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 3703399788225630772, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
+      propertyPath: print
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703399788225630772, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
+      propertyPath: isPrinting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800316568057182131, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
+      propertyPath: m_DetectableTags.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3279982855988286924, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9038149445383173338, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
-      propertyPath: canRandomize
+    - target: {fileID: 7321152250559848342, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
+      propertyPath: TakeActionsBetweenDecisions
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -301,4 +301,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2056143765}
-  - {fileID: 49948907}
+  - {fileID: 198497786}
