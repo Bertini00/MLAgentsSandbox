@@ -173,8 +173,22 @@ public class AgentController : MonoBehaviour
         if (plate != null)
         {
             //Debug.Log("Pressure plate pressed: " + other.name);
+            Vector3 dir = direction.transform.position - cube.transform.position;
+            Vector3 dirToPlate = plate.transform.position - cube.transform.position;
+            float facingDirectionToPlate = Vector3.Dot(dir.normalized, dirToPlate.normalized);
+            //Debug.Log("Facing Direction: " + facingDirectionToPlate);
             if (plate.ActivatePressurePlate())
-                agent.AddRew(0.3f);
+            {
+                if (facingDirectionToPlate >= 0)
+                {
+                    agent.AddRew(0.3f);
+                }
+                else if(facingDirectionToPlate < 0)
+                {
+                    agent.AddRew(-0.2f);
+                }
+
+            }
             return;
         }
 

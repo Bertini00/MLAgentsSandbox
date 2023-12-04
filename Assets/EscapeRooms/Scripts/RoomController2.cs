@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomController : MonoBehaviour
+public class RoomController2 : MonoBehaviour
 {
     // Public
 
@@ -33,7 +33,7 @@ public class RoomController : MonoBehaviour
         for (int i = 0; i < Plates.Count; i++)
         {
             Plates[i].ResetPressurePlate();
-            if (canRandomize)
+            if(canRandomize)
             {
                 Plates[i].Randomize();
             }
@@ -41,7 +41,7 @@ public class RoomController : MonoBehaviour
 
         Door.ResetDoor();
 
-        if(canRandomize)
+        if (canRandomize)
             agent.Randomize();
     }
 
@@ -49,10 +49,9 @@ public class RoomController : MonoBehaviour
     {
         platesPressed++;
         //Debug.Log("Plate pressed from controller");
-        if (platesPressed >= numberOfPlates) 
+        if (platesPressed >= numberOfPlates)
         {
             Door.OpenDoor();
         }
     }
-
 }

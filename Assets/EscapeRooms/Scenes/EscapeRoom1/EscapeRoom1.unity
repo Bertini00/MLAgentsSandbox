@@ -179,9 +179,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2201908519665936804, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.214
+      objectReference: {fileID: 0}
     - target: {fileID: 2591412244926466965, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
       propertyPath: m_Name
       value: EscapeRoom1Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 3515822205998227689, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 448
       objectReference: {fileID: 0}
     - target: {fileID: 3703399788225630772, guid: 725183e90427fa94e8b41e5d456a66d2, type: 3}
       propertyPath: print

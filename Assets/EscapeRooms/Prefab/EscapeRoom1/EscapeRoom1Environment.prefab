@@ -277,6 +277,7 @@ MonoBehaviour:
   Plates:
   - {fileID: 903175605332614385}
   Door: {fileID: 5354818381864105942}
+  agent: {fileID: 5058881973330067608}
   canRandomize: 1
 --- !u!1 &5646911402275550053
 GameObject:
@@ -725,6 +726,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7598687405520117256, guid: 54aa089bb7b104c4c800a92e80a1f263, type: 3}
   m_PrefabInstance: {fileID: 8646126020310267820}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5058881973330067608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3587670795069798196, guid: 54aa089bb7b104c4c800a92e80a1f263, type: 3}
+  m_PrefabInstance: {fileID: 8646126020310267820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb87fc9aa5e25c4db27c5ef20fdd62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8768210789148679219
 PrefabInstance:
   m_ObjectHideFlags: 0
