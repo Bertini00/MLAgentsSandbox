@@ -28,6 +28,13 @@ public class PressurePlate: MonoBehaviour
         transform.position = startingPosition;
         activated = false;
 
+        ActivatableObject actObj = GetComponentInChildren<ActivatableObject>();
+
+        if (actObj)
+        {
+            actObj.ResetObject();
+        }
+
     }
     public bool ActivatePressurePlate()
     {
@@ -36,7 +43,13 @@ public class PressurePlate: MonoBehaviour
             //Debug.Log("Attivata pressure plate");
             activated = true;
             RoomController.PressPlate();
-            StartCoroutine(plateCoroutine(true));
+            ActivatableObject actObj = GetComponentInChildren<ActivatableObject>();
+
+            if (actObj)
+            {
+                actObj.Activate();
+            }
+            //StartCoroutine(plateCoroutine(true));
             return true;
         }
         return false;

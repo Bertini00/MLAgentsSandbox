@@ -1,0 +1,38 @@
+{
+    "EscapeRoomAgent": {
+        "checkpoints": [
+            {
+                "steps": 499986,
+                "file_path": "results\\Test2\\EscapeRoomAgent\\EscapeRoomAgent-499986.onnx",
+                "reward": 1.280500054359436,
+                "creation_time": 1702242130.719202,
+                "auxillary_file_paths": [
+                    "results\\Test2\\EscapeRoomAgent\\EscapeRoomAgent-499986.pt"
+                ]
+            },
+            {
+                "steps": 800009,
+                "file_path": "results\\Test2\\EscapeRoomAgent\\EscapeRoomAgent-800009.onnx",
+                "reward": 1.2820000648498535,
+                "creation_time": 1702243476.5693994,
+                "auxillary_file_paths": [
+                    "results\\Test2\\EscapeRoomAgent\\EscapeRoomAgent-800009.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 800009,
+            "file_path": "results\\Test2\\EscapeRoomAgent.onnx",
+            "reward": 1.2820000648498535,
+            "creation_time": 1702243476.5693994,
+            "auxillary_file_paths": [
+                "results\\Test2\\EscapeRoomAgent\\EscapeRoomAgent-800009.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.1.1+cpu"
+    }
+}

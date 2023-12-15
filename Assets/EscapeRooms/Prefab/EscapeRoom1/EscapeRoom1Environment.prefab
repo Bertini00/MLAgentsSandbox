@@ -499,6 +499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate
       objectReference: {fileID: 0}
+    - target: {fileID: 8501162907678677580, guid: 5e14cf1d4292da94b8bfe8178c469167, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -682,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7598687405520117256, guid: 54aa089bb7b104c4c800a92e80a1f263, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 6.01
       objectReference: {fileID: 0}
     - target: {fileID: 7598687405520117256, guid: 54aa089bb7b104c4c800a92e80a1f263, type: 3}
       propertyPath: m_LocalRotation.w

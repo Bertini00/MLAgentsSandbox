@@ -103,8 +103,8 @@ public class EscapeRoomAgent : Agent, IRandomizable
     public override void OnEpisodeBegin()
     {
         
-        roomController.ResetRoom();
         controller.ResetAgent();
+        roomController.ResetRoom();
         canRandomize = roomController.canRandomize;
 
         rewardTracker.LogReward();
@@ -139,18 +139,24 @@ public class EscapeRoomAgent : Agent, IRandomizable
     }
     public void Randomize(float minX = -1, float maxX = 1, float minZ = -1, float maxZ = 1) 
     {
-        gameObject.transform.position += new Vector3(Random.Range(minX, maxX), 0, Random.Range(minZ, maxZ));
+        transform.Translate(new Vector3(Random.Range(minX, maxX), 0, Random.Range(minZ, maxZ)));
+        //gameObject.transform.position += new Vector3(Random.Range(minX, maxX), 0, Random.Range(minZ, maxZ));
     }
 
     public void Randomize(float minX = -1, float maxX = 1, float minY = -1, float maxY = 1, float minZ = -1, float maxZ = 1)
     {
-        gameObject.transform.position += new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
+        transform.Translate(new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ)));
+        //gameObject.transform.position += new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
     }
 
     public void Randomize(Vector3 minValues, Vector3 maxValues)
     {
-        gameObject.transform.position += new Vector3(Random.Range(minValues.x, maxValues.x), 
-            Random.Range(minValues.y, maxValues.y), 
-            Random.Range(minValues.z, maxValues.z));
+        transform.Translate(new Vector3(Random.Range(minValues.x, maxValues.x),
+            Random.Range(minValues.y, maxValues.y),
+            Random.Range(minValues.z, maxValues.z)));
+        
+        //gameObject.transform.position += new Vector3(Random.Range(minValues.x, maxValues.x), 
+            //Random.Range(minValues.y, maxValues.y), 
+            //Random.Range(minValues.z, maxValues.z));
     }
 }

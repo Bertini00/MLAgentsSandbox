@@ -78,11 +78,11 @@ public class AgentController : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Physics.Raycast(transform.position, -cube.transform.forward, (height / 2) * transform.localScale.x, LayerMask.GetMask("Ground")) ||
-            Physics.Raycast(transform.position, cube.transform.forward, (height / 2) * transform.localScale.x, LayerMask.GetMask("Ground")) ||
-            Physics.Raycast(transform.position, -cube.transform.right, (height / 2) * transform.localScale.x, LayerMask.GetMask("Ground")) ||
-            Physics.Raycast(transform.position, cube.transform.right, (height / 2) * transform.localScale.x, LayerMask.GetMask("Ground")) ||
-            Physics.Raycast(transform.position, cube.transform.up, (height / 2) * transform.localScale.x, LayerMask.GetMask("Ground")))
+        if (Physics.Raycast(transform.position, -cube.transform.forward, (height / 2) * transform.localScale.x + 0.05f, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, cube.transform.forward, (height / 2) * transform.localScale.x + 0.05f, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, -cube.transform.right, (height / 2) * transform.localScale.x + 0.05f, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, cube.transform.right, (height / 2) * transform.localScale.x + 0.05f, LayerMask.GetMask("Ground")) ||
+            Physics.Raycast(transform.position, cube.transform.up, (height / 2) * transform.localScale.x + 0.05f, LayerMask.GetMask("Ground")))
         {
             // The player is upside down
             isUpsideDown = true;
@@ -185,7 +185,7 @@ public class AgentController : MonoBehaviour
                 }
                 else if(facingDirectionToPlate < 0)
                 {
-                    agent.AddRew(-0.2f);
+                    agent.AddRew(0.1f);
                 }
 
             }
@@ -196,7 +196,7 @@ public class AgentController : MonoBehaviour
         if (fallTrigger != null)
         {
             //Debug.Log("Found fall trigger");
-            agent.AddRew(-0.2f);
+            agent.AddRew(-10.0f);
             agent.Fall();
             return;
         }

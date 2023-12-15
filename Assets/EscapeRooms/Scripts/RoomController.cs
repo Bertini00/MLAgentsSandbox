@@ -41,8 +41,15 @@ public class RoomController : MonoBehaviour
 
         Door.ResetDoor();
 
-        if(canRandomize)
+        if (numberOfPlates == 0)
+        {
+            Door.OpenDoor();
+        }
+
+        if (canRandomize)
+        {
             agent.Randomize();
+        }
     }
 
     public void PressPlate()

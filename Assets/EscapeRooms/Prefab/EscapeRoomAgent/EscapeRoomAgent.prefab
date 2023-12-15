@@ -201,7 +201,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: UpSensor
-  m_DetectableTags: []
+  m_DetectableTags:
+  - Ground
+  - Objective
+  - Obstacle
   m_RaysPerDirection: 4
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.2
@@ -212,8 +215,8 @@ MonoBehaviour:
   m_ObservationStacks: 5
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
-  m_EndVerticalOffset: 5
+  m_StartVerticalOffset: 2
+  m_EndVerticalOffset: 2
 --- !u!114 &5131711473205024581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: ForwardSensor
-  m_DetectableTags: []
+  m_DetectableTags:
+  - Ground
+  - Objective
+  - Obstacle
   m_RaysPerDirection: 7
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.2
@@ -253,7 +259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: DownSensor
-  m_DetectableTags: []
+  m_DetectableTags:
+  - Ground
+  - Objective
+  - Obstacle
   m_RaysPerDirection: 4
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.2
